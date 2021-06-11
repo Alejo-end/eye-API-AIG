@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  fastapi-backend:
+    build: ./backend/
+    ports:
+      - '8000:8000'
+    depends_on:
+      - mariadb
+  mariadb:
+    image: mariadb:10.5.9
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+    volumes:
+      - db-data:/var/lib/mysql
+  react-frontend:
+    build: ./frontend/
+    ports:
+      - '3000:3000'
+    depends_on:
+      - fastapi-backend
+
+volumes:
+  db-data:

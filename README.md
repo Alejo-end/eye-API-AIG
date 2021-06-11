@@ -1,27 +1,20 @@
-# eye-API-AIG
+#To run this dockerized environment 
 
-**API Endpoints:**
-* demo : retorna si dos rostros son iguales por medio de un booleano.
+#backend
 
-# Installation
+pip install 
+uvicorn main:app
 
-Install [face_recognition](https://github.com/ageitgey/face_recognition) together with [dlib](http://dlib.net/) first.
-Then run: pip install -r requirements.txt
+for documentation
+URL/docs 
+URL/redoc 
 
-# How to Run
+#frontend
 
-## Prerequisites
-Prepare some known faces as a database for face_rec API in sample_images folder, and modify known_faces in face_util.py accordingly.
-```
-# Each face is tuple of (Name,sample image)    
-known_faces = [('Obama','sample_images/obama.jpg'),
-               ('Peter','sample_images/peter.jpg'),
-              ]
-```
-## Run API Server
-py demo.py
+yarn
+yarn start
 
-## Run API client - Web
-Simply open a web browser and enter:
 
-http://127.0.0.1:5001/face_rec
+#docker
+
+docker compose up -d 
