@@ -10,7 +10,7 @@ from fastapi import FastAPI, UploadFile, File
 app = FastAPI()
 db_engine = create_engine("mysql+pymysql://root:my-secret-pw@mariadb/", echo=True, future=True)
 
-@app.post('/face_match')
+@app.post('/compare_faces')
 async def face_match(file: list[UploadFile]=File(...)):
     return len(file)
     
