@@ -22,7 +22,7 @@ async def face_match(file: list[UploadFile]=File(...)):
         return json.dumps(resp_data)       """   
 
 @app.post('./face_rec')
-async def face_recognition(file: UploadFile=File(...)):
+async def face_recognition(file: list[UploadFile]=File(...)):
     if 'file' in files:
         file = files.get('file')                          
         name = face_rec(file)    
@@ -40,6 +40,3 @@ def read_item(item_id: int, q: Optional[str] = None):
 with db_engine.connect() as db_conn:
     result = db_conn.execute(text("select 'hello world'"))
     print(result.all())
-
-# When debug = True, code is reloaded on the fly while saved
-app.run(host='0.0.0.0', port='5001', debug=True)
