@@ -51,12 +51,14 @@ async def add_image_to_db(file: UploadFile = File(...)):
             status.HTTP_400_BAD_REQUEST, detail="No se detectan caras en esta imagen"
         )
 
-    with db_engine.connect() as conn:
-        conn.execute(text(""""""))
+    # with db_engine.connect() as conn:
+    #     conn.execute(text("""
+
+    #     """))
 
     return {"resultado": "Se ha guardado la imagen en la base de datos"}
 
 
 with db_engine.connect() as db_conn:
-    result = db_conn.execute(text("Bienvenido al API de reconocimiento facial."))
+    result = db_conn.execute(text("SELECT 'hello world'"))
     print(result.all())
