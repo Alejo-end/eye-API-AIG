@@ -52,7 +52,7 @@ async def add_image_to_db(file: UploadFile = File(...)):
         )
 
     with db_engine.connect() as conn:
-        conn.execute()
+        conn.execute(text(""""""))
 
     return {"resultado": "Se ha guardado la imagen en la base de datos"}
 
