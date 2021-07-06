@@ -24,23 +24,23 @@ async def face_match(files: List[UploadFile] = File(...)):
             )
 
     resultado = compare_faces(files[0].file, files[1].file)
-    return {"resultado": str(resultado)}
+    return {"Resultado": str(resultado)}
 
 
 @app.post("/face_rec")
-async def face_recognition(file_rec: List[UploadFile] = File(...)):
-    if len(file_rec) != 1:
-        raise HTTPException(status.HTTP_400_BAD_REQUEST, detail="Debe subir 1 imagen")
+async def face_rec(file: UploadFile = File(...)):
+    if file.content_type not in ("image/jpeg", "image/png"):
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST, detail="Deben ser una imagen en formato jpeg, o png."
+        )
 
-    for image in file_rec:
-        if image.content_type not in ("image/jpeg", "image/png"):
-            raise HTTPException(
-                status.HTTP_400_BAD_REQUEST, detail="Deben ser imagenes en formato jpeg, o png."
-            )
+    resultado = face_rec(file.file)
+    return {"Persona": str(resultado)}
 
 
 @app.post("/add_face")
 async def add_image_to_db(file: UploadFile = File(...)):
+    print(file)
     if file.content_type not in ("image/jpeg", "image/png"):
         raise HTTPException(
             status.HTTP_400_BAD_REQUEST, detail="Deben ser una imagen en formato jpeg, o png."
@@ -60,5 +60,5 @@ async def add_image_to_db(file: UploadFile = File(...)):
 
 
 with db_engine.connect() as db_conn:
-    result = db_conn.execute(text("SELECT 'hello world'"))
+    result = db_conn.execute(text("SELECT 'Base de datos conectada'"))
     print(result.all())

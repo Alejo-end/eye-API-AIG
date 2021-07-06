@@ -1,5 +1,5 @@
 FROM node:14-alpine
-WORKDIR frontend/
+WORKDIR /frontend/
 COPY package* yarn.lock ./
 RUN yarn install
 COPY . .
