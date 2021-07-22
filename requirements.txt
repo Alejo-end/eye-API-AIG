@@ -1,0 +1,6 @@
+Werkzeug
+requests
+FastAPI
+Uvicorn
+face_recognition
+Pillow
