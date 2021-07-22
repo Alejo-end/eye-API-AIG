@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Alejo-end <alejandroe.deleon@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = "^0.65.2"
+uvicorn = "^0.14.0"
+pydantic = "^1.8.2"
+PyMySQL = "^1.0.2"
+SQLAlchemy = "^1.4.18"
+face-recognition = "^1.3.0"
+python-multipart = "^0.0.5"
+requests = "^2.25.1"
+pytesseract = "^0.3.8"
+opencv-python = "^4.5.3"
+
+[tool.poetry.dev-dependencies]
+black = "^21.6b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 99
