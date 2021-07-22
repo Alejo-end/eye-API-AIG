@@ -33,30 +33,32 @@ async def face_rec(file: UploadFile = File(...)):
         raise HTTPException(
             status.HTTP_400_BAD_REQUEST, detail="Deben ser una imagen en formato jpeg, o png."
         )
-
+    if not image_has_face(file.file):
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, detail="No hay caras en la imagen")
     resultado = face_rec(file.file)
-    return {"Persona": str(resultado)}
+    return {"Resultado": str(resultado)}    
 
 
 @app.post("/add_face")
 async def add_image_to_db(file: UploadFile = File(...)):
-    print(file)
+
     if file.content_type not in ("image/jpeg", "image/png"):
         raise HTTPException(
             status.HTTP_400_BAD_REQUEST, detail="Deben ser una imagen en formato jpeg, o png."
         )
-
-    if not image_has_face(file):
-        raise HTTPException(
-            status.HTTP_400_BAD_REQUEST, detail="No se detectan caras en esta imagen"
+    if not image_has_face(file.file):
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, detail="No hay caras en la imagen.")
+    face = face_rec(file.file)
+    conn = db_engine.connect()
+    conn.execute(
+        text(
+            "INSERT INTO personas (nombre, apellido, foto) VALUES ('{}', '{}', '{}')".format(
+                face[0], face[1], file.filename
+            )
         )
-
-    # with db_engine.connect() as conn:
-    #     conn.execute(text("""
-
-    #     """))
-
-    return {"resultado": "Se ha guardado la imagen en la base de datos"}
+    )
+    conn.close()
+    return {"Resultado": "OK"}
 
 
 with db_engine.connect() as db_conn:

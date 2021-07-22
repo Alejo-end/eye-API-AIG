@@ -37,3 +37,33 @@ def face_rec(file):
         if compare_faces(known_file, image):
             return name
     return "Unknown"
+
+
+
+def get_face_encodings(file):
+    image = fr.load_image_file(file)
+    return fr.face_encodings(image)
+
+def get_face_names(file):
+    image = fr.load_image_file(file)
+    return fr.face_names(image)
+
+def get_face_locations(file):
+    image = fr.load_image_file(file)
+    return fr.face_locations(image)
+
+def get_face_landmarks(file):
+    image = fr.load_image_file(file)
+    return fr.face_landmarks(image)
+
+
+def get_face_distances(file1, file2):
+    image1 = fr.load_image_file(file1)
+    image2 = fr.load_image_file(file2)
+    return fr.face_distance([image1], image2)
+    
+
+
+    
+
+
