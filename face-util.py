@@ -20,9 +20,10 @@ def compare_faces(file1, file2):
 
 
 # Each face is tuple of (Name,sample image)
-known_faces = [('Obama', 'sample_images/obama.jpg'),
-               ('Peter', 'sample_images/peter.jpg'),
-               ]
+known_faces = [
+    ("Obama", "sample_images/obama.jpg"),
+    ("Peter", "sample_images/peter.jpg"),
+]
 
 
 def face_rec(file):
@@ -32,7 +33,7 @@ def face_rec(file):
     for name, known_file in known_faces:
         if compare_faces(known_file, file):
             return name
-    return 'Unknown'
+    return "Unknown"
 
 
 def find_facial_features(file):
