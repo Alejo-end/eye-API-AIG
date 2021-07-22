@@ -1,7 +1,8 @@
 import json
 
 import requests
-from PIL import Image, ImageDraw
+from PIL import Image
+from PIL import ImageDraw
 
 image_file = "sample_images/obama.jpg"
 
