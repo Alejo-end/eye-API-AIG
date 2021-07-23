@@ -16,9 +16,9 @@
 ## "La Historia de un Query"
 
 1. Fetch de datos desde el Cliente.
-2. Proceso de Cache y consulta a base de datos DB2.
-3. Respuesta de DB2 a FastAPI.
-4. Procesado de Watson Discovery para clasificación y rating.
+2. Proceso de Cache y consulta a base de datos MariaDB.
+3. Respuesta de MariaDB a FastAPI.
+4. Procesado de OpenCV y Pytesseract para reconocimiento.
 5. Respuesta de datos al Cliente.
 <a name="roadmap"></a>
 
