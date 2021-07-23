@@ -1,6 +1,7 @@
 from typing import Optional, List, Tuple
 import json
 from face_util import compare_faces, face_rec, image_has_face
+from ocr import ocr as _ocr
 from sqlalchemy import create_engine, text
 import pymysql
 import uvicorn
@@ -64,3 +65,15 @@ async def add_image_to_db(file: UploadFile = File(...)):
 with db_engine.connect() as db_conn:
     result = db_conn.execute(text("SELECT 'Base de datos conectada'"))
     print(result.all())
+
+@app.post("/ocr")
+async def ocr(img: UploadFile = File(...)):
+    if img.content_type not in ("image/jpeg", "image/png"):
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST, detail="Deben ser una imagen en formato jpeg, o png."
+        )
+    img_data = await img.read()
+    text = _ocr(img_data)
+
+
+    return {"Resultado": str(text)}
