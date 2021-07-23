@@ -15,7 +15,7 @@ export const FaceRecognition = (): JSX.Element => (
         <p className="text-md">Por favor seleccione una opción</p>
       </div>
       <div className="flex justify-center flex-col lg:flex-row gap-10">
-        <Link href="/reconocimiento-facial">
+        <Link href="/reconocimiento-facial/persona">
           <a>
             <Card image={person} title="Reconocimiento de persona" />
           </a>
