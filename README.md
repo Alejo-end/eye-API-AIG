@@ -32,9 +32,9 @@
 <a name="Live_Demo"></a>
 # Live Demo
 
-- [Frontend DEMO](https://ecobridge.mybluemix.net)
+- [Frontend DEMO]()
 
-- [API DEMO](https://ecobridge-api.mybluemix.net/docs)
+- [API DEMO]()
 <a name="Technologies"></a>
 # Creado con ⚙♻⚡
 

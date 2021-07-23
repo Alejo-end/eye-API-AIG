@@ -13,7 +13,7 @@ export const Home = (): JSX.Element => (
     </Head>
     <NavBar img="/images/aig.png" />
     <div className="text-center">
-      <div className="m-10 xl:m-16">
+      <div className="mt-10 xl:mt-32 mb-10">
         <h2 className="font-semibold text-lg">
           Bienvenidos al API de Reconocimiento Facial y OCR.
         </h2>

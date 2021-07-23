@@ -3,9 +3,9 @@ import Footer from '../../../components/Footer'
 import Image from 'next/image'
 import { useState } from 'react'
 
-const document = '/images/document.svg'
+const percent = '/images/percent.svg'
 
-export const Documento = (): JSX.Element => {
+export const Porcentaje = (): JSX.Element => {
   const [selectedFile, setSelectedFile] = useState()
   const [isSelected, setIsSelected] = useState(false)
   const [result, setResult] = useState('')
@@ -39,7 +39,7 @@ export const Documento = (): JSX.Element => {
       <NavBar img="/images/aig.png" />
       <div className="text-center ">
         <div className="mt-10 xl:mt-32 mb-10">
-          <Image src={document} width="100" height="100" alt="" />
+          <Image src={percent} width="100" height="100" alt="" />
           <p className="text-md font-semibold mt-5">
             Por favor introduzca una imagen para su procesamiento a texto.
           </p>
@@ -101,4 +101,4 @@ export const Documento = (): JSX.Element => {
   )
 }
 
-export default Documento
+export default Porcentaje

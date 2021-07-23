@@ -11,7 +11,7 @@ export const FaceRecognition = (): JSX.Element => (
   <>
     <NavBar img="/images/aig.png" />
     <div className="text-center">
-      <div className="m-10 xl:m-16">
+      <div className="mt-10 xl:mt-32 mb-10">
         <p className="text-md">Por favor seleccione una opción</p>
       </div>
       <div className="flex justify-center flex-col lg:flex-row gap-10">
