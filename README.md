@@ -30,7 +30,7 @@
 - [Frontend](frontend/README.md)
 
 <a name="Live_Demo"></a>
-# Live Demo ��
+# Live Demo
 
 - [Frontend DEMO](https://ecobridge.mybluemix.net)
 
@@ -57,6 +57,13 @@
 
 ### Menú Reconocimiento de Texto
 ![image](https://user-images.githubusercontent.com/63655402/126728169-f6d82f57-01f4-4efc-920e-95ba9903e54b.png)
+ 
+ ### API - OCR
+ ![image](https://user-images.githubusercontent.com/63655402/126737561-c47d72e8-0d4f-4eb0-afce-81107f318870.png)
+ 
+ ### API - Compare Faces
+ ![image](https://user-images.githubusercontent.com/63655402/126737660-781de00a-3bb9-47f8-8b86-64ff9bbd219f.png)
+
  
 <a name="Team"></a>
 # Team ✒️👨🏽‍💻
