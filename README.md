@@ -10,7 +10,8 @@
 
 <a name="Arquitectura"></a>
 # Arquitectura
-![Arquitectura](https://user-images.githubusercontent.com/35198616/124071806-8b330380-da05-11eb-81b1-68d2a0070df7.jpeg)
+![Arquitectura](https://user-images.githubusercontent.com/63655402/126729066-a7fc753a-24ee-4461-9d68-62e4c76bd9ba.jpg)
+
 
 ## "La Historia de un Query"
 
@@ -36,7 +37,6 @@
 - [API DEMO](https://ecobridge-api.mybluemix.net/docs)
 <a name="Technologies"></a>
 # Creado con ⚙♻⚡
-![image](https://user-images.githubusercontent.com/63655402/124836069-f6219480-df47-11eb-8f1b-2355694d7ec5.png)
 
 * [Next.js](https://flutter.dev/)- Framework de React.js para aplicaciones web.
 * [FastAPI](https://nodejs.org/en/) - Micro-framework de Python para creación de APIs asíncronas
