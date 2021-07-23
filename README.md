@@ -62,6 +62,10 @@
 (para el ejemplo se uso la imagen de la arquitectura.)
 ![image](https://user-images.githubusercontent.com/63655402/126743899-1085cbf7-0df9-44d9-9140-642b20a29a7a.png)
  
+ ### Reconocimiento de Cedula a Texto 
+(para el ejemplo se uso la imagen de la arquitectura.)
+![image](https://user-images.githubusercontent.com/63655402/126747023-9b10a10f-13d6-4242-b3a0-bfb121b078d9.png)
+ 
  ### API - OCR
  ![image](https://user-images.githubusercontent.com/63655402/126737561-c47d72e8-0d4f-4eb0-afce-81107f318870.png)
  
