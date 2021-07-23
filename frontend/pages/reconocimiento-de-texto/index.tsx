@@ -1,4 +1,5 @@
 import NavBar from '../../components/NavBar'
+import Footer from '../../components/Footer'
 import Card from '../../components/Card'
 import Link from 'next/link'
 const idcard = '/images/idcard.svg'
@@ -29,20 +30,7 @@ export const TextRecognition = (): JSX.Element => (
           </a>
         </Link>
       </div>
-      <footer
-        className="bg-blue-900
-               text-md text-white text-center
-               border-t-4 border-red-700
-               fixed
-               inset-x-0
-               bottom-0
-               p-3"
-      >
-        &copy; {new Date().getFullYear()} Autoridad de Innovación Gubernamental
-        <small className="uppercase text-xs mt-4 block text-gray-300">
-          🚀 Built by Alejandro
-        </small>
-      </footer>
+      <Footer title="Autoridad de Innovación Gubernamental" />
     </div>
   </>
 )
