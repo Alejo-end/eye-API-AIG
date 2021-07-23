@@ -14,17 +14,17 @@ export const TextRecognition = (): JSX.Element => (
         <p className="text-md">Por favor seleccione una opción</p>
       </div>
       <div className="flex justify-center flex-col lg:flex-row gap-10">
-        <Link href="/reconocimiento-facial">
+        <Link href="/reconocimiento-de-texto/documento">
           <a>
             <Card image={passport} title="Lectura de Pasaporte" />
           </a>
         </Link>
-        <Link href="/reconocimiento-facial">
+        <Link href="/reconocimiento-de-texto/documento">
           <a>
             <Card image={document} title="Lectura de Documento" />
           </a>
         </Link>{' '}
-        <Link href="/reconocimiento-facial">
+        <Link href="/reconocimiento-de-texto/documento">
           <a>
             <Card image={idcard} title="Lectura de cédula" />
           </a>

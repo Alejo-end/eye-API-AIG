@@ -57,6 +57,10 @@
 
 ### Menú Reconocimiento de Texto
 ![image](https://user-images.githubusercontent.com/63655402/126728169-f6d82f57-01f4-4efc-920e-95ba9903e54b.png)
+
+### Reconocimiento de Imagen a Texto 
+(para el ejemplo se uso la imagen de la arquitectura.)
+![image](https://user-images.githubusercontent.com/63655402/126743899-1085cbf7-0df9-44d9-9140-642b20a29a7a.png)
  
  ### API - OCR
  ![image](https://user-images.githubusercontent.com/63655402/126737561-c47d72e8-0d4f-4eb0-afce-81107f318870.png)

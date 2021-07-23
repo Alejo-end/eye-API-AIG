@@ -7,11 +7,24 @@ import pymysql
 import uvicorn
 
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 """ db_engine = create_engine("mysql+pymysql://root:my-secret-pw@mariadb/", echo=True, future=True) """
 db_engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
 
+
+origins = [
+    "http://localhost:3000"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/compare_faces")
 async def face_match(files: List[UploadFile] = File(...)):
