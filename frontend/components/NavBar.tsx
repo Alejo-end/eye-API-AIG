@@ -24,7 +24,7 @@ export default function NavBar(props: NavProps) {
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-end md:flex-1 lg:w-0">
           <a
-            href="/docs"
+            href="http://localhost:8000/docs"
             className="whitespace-nowrap text-base font-medium px-4 py-2 text-gray-500 hover:text-gray-900"
           >
             Ver la documentación
