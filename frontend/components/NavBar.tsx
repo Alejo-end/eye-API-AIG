@@ -8,7 +8,7 @@ interface NavProps {
 
 export default function NavBar(props: NavProps) {
   return (
-    <div className="w-auto px-4 sm:px-6 bg-gray-100 shadow-md">
+    <nav className="w-auto px-4 sm:px-6 bg-gray-100 shadow-md fixed inset-x-0 top-0">
       <div className="flex justify-between items-center py-1 md:justify-start md:space-x-10">
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <Link href="/">
@@ -22,7 +22,7 @@ export default function NavBar(props: NavProps) {
             />
           </Link>
         </div>
-        <div className="flex flex-col lg:flex-row items-center justify-end md:flex-1 lg:w-0">
+        <div className="flex flex-col lg:flex-row items-center justify-end flex-1 lg:w-0">
           <a
             href="http://localhost:8000/docs"
             className="whitespace-nowrap text-base font-medium px-4 py-2 text-gray-500 hover:text-gray-900"
@@ -36,6 +36,6 @@ export default function NavBar(props: NavProps) {
           </Link>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
