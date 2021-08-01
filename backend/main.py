@@ -9,7 +9,10 @@ import uvicorn
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+app = FastAPI(
+    title="Eye API AIG",
+    description="API para detección de rostros y lectura de documentos",
+)
 """ db_engine = create_engine("mysql+pymysql://root:my-secret-pw@mariadb/", echo=True, future=True) """
 db_engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
 

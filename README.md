@@ -25,6 +25,8 @@
 <a name="Getting_Started"></a>
 # Iniciar el App
 
+`docker compose up -d`
+
 
 - [Backend](backend/README.md)
 - [Frontend](frontend/README.md)
