@@ -56,7 +56,7 @@ async def face_rec(file: UploadFile = File(...)):
     if not image_has_face(file.file):
         raise HTTPException(status.HTTP_400_BAD_REQUEST, detail="No hay caras en la imagen")
     resultado = face_rec(file.file)
-    return {"Resultado": str(resultado)}    
+    return {"Resultado": str(resultado)} 
 
 
 @app.post("/add_face")

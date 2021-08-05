@@ -1,7 +1,8 @@
 # This is a sample Dockerfile you can modify to deploy your own app based on face_recognition
 
-FROM python:3.6-slim-stretch
+FROM python:3.7-slim-stretch
 
+WORKDIR /usr/src/app/backend
 RUN apt-get -y update
 RUN apt-get install -y --fix-missing \
     build-essential \
@@ -32,7 +33,10 @@ RUN cd ~ && \
     cd  dlib/ && \
     python3 setup.py install --yes USE_AVX_INSTRUCTIONS
 
-WORKDIR /usr/src/app
-RUN poetry install 
+COPY poetry.lock pyproject.toml /usr/src/app/backend/
+RUN pip install poetry~=1.1 && \
+		poetry config virtualenvs.create false && \
+		poetry install --no-dev
+RUN poetry install
 EXPOSE 8000
 CMD ["poetry","run","uvicorn", "--host=0.0.0.0" , "main:app", "--reload"]
