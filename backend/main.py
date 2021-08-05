@@ -96,3 +96,16 @@ async def ocr(img: UploadFile = File(...)):
 
 
     return {"Resultado": str(text)}
+
+
+@app.post("/cedula")
+async def cedula(img: UploadFile = File(...)):
+    if img.content_type not in ("image/jpeg", "image/png"):
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST, detail="Deben ser una imagen en formato jpeg, o png."
+        )
+    img_data = await img.read()
+    text = _cedula(img_data)
+
+
+    return {"Resultado": str(text)}
