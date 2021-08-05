@@ -33,8 +33,6 @@ RUN cd ~ && \
     python3 setup.py install --yes USE_AVX_INSTRUCTIONS
 
 WORKDIR /usr/src/app
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
+RUN poetry install 
 EXPOSE 8000
-CMD ["uvicorn", "--host=0.0.0.0" , "main:app", "--reload"]
+CMD ["poetry","run","uvicorn", "--host=0.0.0.0" , "main:app", "--reload"]

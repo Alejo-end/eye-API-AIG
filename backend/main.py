@@ -1,7 +1,6 @@
 from typing import Optional, List, Tuple
 import json
 from face_util import compare_faces, face_rec, image_has_face
-from ocr import ocr as _ocr
 from sqlalchemy import create_engine, text
 import pymysql
 import uvicorn
@@ -9,12 +8,16 @@ import uvicorn
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 
+from backend.models import Base
+from backend.ocr import ocr as _ocr
+
 app = FastAPI(
     title="Eye API AIG",
     description="API para detección de rostros y lectura de documentos",
 )
 """ db_engine = create_engine("mysql+pymysql://root:my-secret-pw@mariadb/", echo=True, future=True) """
 db_engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
+Base.metadata.create_all()
 
 
 origins = [
