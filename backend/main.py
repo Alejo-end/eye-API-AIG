@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from backend.models import Base
 from backend.ocr import ocr as _ocr
+from backend.cedula import cedula as _cedula
 
 app = FastAPI(
     title="Eye API AIG",
