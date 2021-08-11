@@ -10,7 +10,7 @@ import uvicorn
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 
-from models import Base
+
 from ocr import ocr as _ocr
 """ from cedula import cedula as _cedula """
 
@@ -20,7 +20,6 @@ app = FastAPI(
 )
 """ db_engine = create_engine("mysql+pymysql://root:my-secret-pw@mariadb/", echo=True, future=True) """
 db_engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
-Base.metadata.create_all()
 
 
 origins = [

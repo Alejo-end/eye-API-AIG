@@ -39,4 +39,4 @@ RUN pip install poetry~=1.1 && \
 		poetry install --no-dev
 RUN poetry install
 EXPOSE 8000
-CMD ["poetry", "run", "uvicorn", "backend.main:app", "--host=0.0.0.0"]
+CMD ["poetry", "run", "uvicorn", "backend.main:app", "--host=0.0.0.0", "--port=8000"]
