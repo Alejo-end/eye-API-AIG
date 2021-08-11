@@ -1,3 +1,5 @@
+print(__package__)
+print(__loader__)
 from typing import Optional, List, Tuple
 import json
 from face_util import compare_faces, face_rec, image_has_face
@@ -8,9 +10,9 @@ import uvicorn
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.models import Base
-from backend.ocr import ocr as _ocr
-from backend.cedula import cedula as _cedula
+from models import Base
+from ocr import ocr as _ocr
+""" from cedula import cedula as _cedula """
 
 app = FastAPI(
     title="Eye API AIG",
@@ -99,7 +101,7 @@ async def ocr(img: UploadFile = File(...)):
     return {"Resultado": str(text)}
 
 
-@app.post("/cedula")
+""" @app.post("/cedula")
 async def cedula(img: UploadFile = File(...)):
     if img.content_type not in ("image/jpeg", "image/png"):
         raise HTTPException(
@@ -109,4 +111,4 @@ async def cedula(img: UploadFile = File(...)):
     text = _cedula(img_data)
 
 
-    return {"Resultado": str(text)}
+    return {"Resultado": str(text)} """

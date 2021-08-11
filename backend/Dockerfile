@@ -2,7 +2,7 @@
 
 FROM python:3.7-slim-stretch
 
-WORKDIR /usr/src/app/backend
+WORKDIR /usr/src/app/backend/
 RUN apt-get -y update
 RUN apt-get install -y --fix-missing \
     build-essential \
@@ -39,4 +39,4 @@ RUN pip install poetry~=1.1 && \
 		poetry install --no-dev
 RUN poetry install
 EXPOSE 8000
-CMD ["uvicorn", "--host=0.0.0.0" , "app.main:app", "--reload"]
+CMD ["poetry", "run", "uvicorn", "backend.main:app", "--host=0.0.0.0"]

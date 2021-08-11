@@ -1,4 +1,4 @@
-import sys
+""" import sys
 import cv2
 import numpy as np
 import pytesseract
@@ -92,4 +92,4 @@ predictions = img_conf["text"].to_list()
 # uncomment to see confident predictions
 # print(predictions)
 
-print("Execution Time: {}".format(datetime.now() - startTime))
+print("Execution Time: {}".format(datetime.now() - startTime)) """

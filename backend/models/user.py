@@ -4,15 +4,14 @@ from typing import Optional, TYPE_CHECKING
 from sqlalchemy.orm import relationship
 from sqlalchemy import Integer, Column, String, Boolean, ForeignKey
 
-from app.models.base import Base, timestamps
-from app.models.utils import generate_updated_at_trigger_ddl, get_tablename
+from models.base import Base, timestamps
 
 if TYPE_CHECKING:
-    from app.models.image import Image
+    from models.image import Image
 
 
 class User(Base):
-    __tablename__ = get_tablename("users")
+    __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
     nombre = Column(String(64), nullable=False, unique=True, index=True)
@@ -26,7 +25,6 @@ class User(Base):
     )
     created_at, updated_at = timestamps()
 
-    triggers_ddl = {generate_updated_at_trigger_ddl(__tablename__)}
 
     def __repr__(self) -> str:
         return f"User(id={self.id!r}, nombre={self.nombre!r})"

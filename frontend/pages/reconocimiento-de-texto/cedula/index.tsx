@@ -25,7 +25,7 @@ export const Documento = (): JSX.Element => {
 
     formData.append('img', selectedFile)
 
-    fetch('http://localhost:8000/ocr', {
+    fetch('http://localhost:8000/cedula', {
       method: 'POST',
       body: formData,
     })

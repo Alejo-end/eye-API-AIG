@@ -5,12 +5,10 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import Integer, Column, String, Boolean
 from sqlalchemy.sql.sqltypes import Numeric
 
-from app.models.base import Base, timestamps
-from app.models.utils import generate_updated_at_trigger_ddl, get_tablename
-
+from models.base import Base, timestamps
 
 class Documento(Base):
-    __tablename__ = get_tablename('documentos')
+    __tablename__ = 'documentos'
     id = Column(Integer, primary_key=True)
     nombre = Column(String(255), nullable=False)
     descripcion = Column(String(255), nullable=True)
@@ -19,7 +17,6 @@ class Documento(Base):
     creado_fecha = Column(Integer, nullable=False)
     actualizado_fecha = Column(Integer, nullable=False)
     tipo = Column(String(255), nullable=True)
-    triggers_ddl = {generate_updated_at_trigger_ddl(__tablename__)}
     created_at, updated_at = timestamps()
 
     def __repr__(self) -> str:
